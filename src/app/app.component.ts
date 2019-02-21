@@ -13,9 +13,10 @@ export class AppComponent {
   posts = []
 
   constructor(private dataService: DataService) {
+
     this.dataService.getData().subscribe(data => {
       console.log(data)
-      // this.posts = data
+      this.posts = data.data.results
       
     })
     
